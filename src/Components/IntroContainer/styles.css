@@ -15,7 +15,8 @@
 .introContainer {
   padding-top: 1600px;
   animation: autoscroll 100s linear;
-  color: #A54B50;
+  /* color: #A54B50; */
+  color: #F1634E
 }
 
 @keyframes autoscroll {
