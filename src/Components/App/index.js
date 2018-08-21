@@ -5,7 +5,6 @@ import { filmDataCall } from '../../data/apiFetchCall';
 import { IntroContainer } from '../IntroContainer';
 import { NavBar } from '../NavBar';
 
-
 class App extends Component {
   constructor() {
     super();
@@ -16,6 +15,10 @@ class App extends Component {
 
   componentDidMount() {
     this.retrieveFilmData();
+  }
+
+  handleClick = (selectedButton) => {
+    //put api call here
   }
 
   retrieveFilmData = async () => {
@@ -31,7 +34,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className='header'>SWAPI-Box</h1>
-        <NavBar />
+        <NavBar handleClick={this.handleClick} />
         {displayData}
       </div>
     );

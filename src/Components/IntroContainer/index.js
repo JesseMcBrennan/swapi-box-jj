@@ -1,8 +1,8 @@
 import React from 'react';
-import PropType from 'prop-types';
+import PropTypes from 'prop-types';
 import './styles.css';
 
-export const IntroContainer = ({filmData}) => {
+export const IntroContainer = ({ filmData }) => {
   const randomNumber = Math.floor(Math.random() * (7));
   const displayFilmData = filmData[`${randomNumber}`];
 
@@ -16,3 +16,7 @@ export const IntroContainer = ({filmData}) => {
     </div>
   );
 }; 
+
+IntroContainer.propTypes = {
+  filmData: PropTypes.object
+};
