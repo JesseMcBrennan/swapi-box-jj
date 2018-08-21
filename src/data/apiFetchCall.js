@@ -1,4 +1,3 @@
-
 export const filmDataCall = async (url) => {
   const filmUrl = "https://swapi.co/api/films/";
   const response = await fetch(filmUrl);
@@ -6,7 +5,6 @@ export const filmDataCall = async (url) => {
   const cleanedData = await cleanFilmData(rawFilmData.results);
   return cleanedData;
 };
-
 
 const cleanFilmData = (rawFilmData) => {
   return rawFilmData.map(film => ({
@@ -16,5 +14,3 @@ const cleanFilmData = (rawFilmData) => {
   })
   );
 };
-
-
