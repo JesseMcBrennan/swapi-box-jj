@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import './styles.css';
 import { filmDataCall } from '../../data/apiFetchCall';
 import { IntroContainer } from '../IntroContainer';
+import { NavBar } from '../NavBar'
+
 
 class App extends Component {
   constructor() {
@@ -28,6 +30,7 @@ class App extends Component {
     const displayData = filmData.length ? <IntroContainer filmData={filmData} /> : <h1>place holder</h1>;
     return (
       <div className="App">
+        <NavBar />
         {displayData}
       </div>
     );

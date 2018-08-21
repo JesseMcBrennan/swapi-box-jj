@@ -1,0 +1,12 @@
+.navBar {
+  display: flex;
+  justify-content: center;
+  border: 1 solid black;
+  width: 40%; 
+}
+
+button {
+ flex-grow: 1;
+ padding: 1em;
+ margin: 2em 0 2em;
+}
