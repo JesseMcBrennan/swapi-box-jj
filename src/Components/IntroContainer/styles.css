@@ -1,16 +1,25 @@
+.target {
+  position: absolute;
+  top: -920px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  font-size: 40px;
+  text-align: center;
+  font-family: sans-serif;
+  transform-origin: 50% 100%;
+  transform: perspective(300px) rotateX(20deg);
+}
+
 .introContainer {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 35%;
-  border: 1px solid black;
-  padding: 20px;
+  padding-top: 1600px;
+  animation: autoscroll 100s linear;
+  color: #A54B50;
 }
 
-h1 {
-  margin: .5em 0;
-}
-
-p {
-  font-size: 1.5rem;
+@keyframes autoscroll {
+  to {
+    margin-top: -5000px;
+  }
 }
