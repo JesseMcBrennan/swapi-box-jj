@@ -1,9 +1,9 @@
-
 import React, { Component } from 'react';
+import loadingDroid from '../../loading.gif';
 import './styles.css';
 import { filmDataCall } from '../../data/apiFetchCall';
 import { IntroContainer } from '../IntroContainer';
-import { NavBar } from '../NavBar'
+import { NavBar } from '../NavBar';
 
 
 class App extends Component {
@@ -27,9 +27,10 @@ class App extends Component {
 
   render() {
     const { filmData } = this.state;
-    const displayData = filmData.length ? <IntroContainer filmData={filmData} /> : <h1>place holder</h1>;
+    const displayData = filmData.length ? <IntroContainer filmData={filmData} /> : <img src={loadingDroid} />;
     return (
       <div className="App">
+        <h1 className='header'>SWAPI-Box</h1>
         <NavBar />
         {displayData}
       </div>
