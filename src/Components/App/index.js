@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import loadingDroid from '../../loading.gif';
 import './styles.css';
-import { filmDataCall } from '../../data/apiFetchCall';
+import { getFilmData, getPeopleData } from '../../data/apiFetchCall';
 import { IntroContainer } from '../IntroContainer';
 import { NavBar } from '../NavBar';
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      filmData: []
+      filmData: [],
+      peopleData: []
     };
   }
 
@@ -17,12 +19,15 @@ class App extends Component {
     this.retrieveFilmData();
   }
 
-  handleClick = (selectedButton) => {
-    //put api call here
+  handleClick = async (selectedButton) => {
+    const peopleData = await getPeopleData()
+    this.setState({
+      peopleData
+    })
   }
 
   retrieveFilmData = async () => {
-    const filmData = await filmDataCall();
+    const filmData = await getFilmData();
     this.setState({
       filmData
     });
