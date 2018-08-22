@@ -11,8 +11,7 @@ const cleanFilmData = (rawFilmData) => {
     title: film.title,
     crawl: film.opening_crawl,
     releaseDate: film.release_date
-  })
-  );
+  }));
 };
 
 export const getPeopleData = async (url) =>{
@@ -20,7 +19,6 @@ export const getPeopleData = async (url) =>{
   const response = await fetch(peopleUrl);
   const rawPeopleData = await response.json();
   return await cleanPeopleData(rawPeopleData.results);
-
 }
 
 const cleanPeopleData = async (rawPeopleData) => {
@@ -33,9 +31,7 @@ const cleanPeopleData = async (rawPeopleData) => {
     const peopleObj = {name,...receivedWorldData,...receivedSpeciesData};
     return peopleObj;
   })
-
   return await Promise.all(unresolvedPromiseArray)
-  
 }
 
 const getWorldData = async (worldUrl) => {
@@ -50,7 +46,6 @@ const getWorldData = async (worldUrl) => {
 const getSpeciesData = async (speciesUrl) => {
   const response = await fetch(speciesUrl);
   const speciesData = await response.json();
-
   return {
     species: speciesData.name
   }
