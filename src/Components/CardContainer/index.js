@@ -4,11 +4,11 @@ import { Card } from "../Card";
 import './styles.css';
 
 export const CardContainer = ({ peopleData, planetData, vehicleData, favoritesData }) => {
-  const displayPeopleCards = peopleData.map(person => <Card {...person} />);
+  // const displayPeopleCards = peopleData.map(person => <Card {...person} />);
 
   return (
     <div>
-      {displayPeopleCards}
+   {/*   {displayPeopleCards}*/}
     </div>
   );
 };
