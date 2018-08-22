@@ -4,7 +4,7 @@ import './styles.css';
 
 export const Card = ({name, homeworld, species, population }) => {
   return (
-    <div>
+    <div onClick={console.log('')}>
       <h2>{name}</h2>
       <h2>{homeworld}</h2>
       <h2>{species}</h2>
