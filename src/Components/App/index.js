@@ -63,13 +63,13 @@ class App extends Component {
       : <img src={loadingDroid} />;
     switch (cardsToDisplay) {
       case 'people':
-        return <CardContainer peopleData={peopleData} />;
+        return <CardContainer cardData={peopleData} />;
       case 'vehicles':
-        return <CardContainer vehicleData={vehicleData} />;
+        return <CardContainer cardData={vehicleData} />;
       case 'planets':
-        return <CardContainer planetData={planetData} />;
+        return <CardContainer cardData={planetData} />;
       case 'favorites':
-        return <CardContainer favoritesData={favoritesData} />;
+        return <CardContainer cardData={favoritesData} />;
       default:
         return <div>{displayData}</div>;
     }
