@@ -80,7 +80,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className='header'>SWAPI-Box</h1>
-        <NavBar handleClick={this.handleClick} />
+        <NavBar handleClick={this.handleClick} selectedButton={cardsToDisplay}/>
         {this.displaySelection(cardsToDisplay)}
       </div>
     );

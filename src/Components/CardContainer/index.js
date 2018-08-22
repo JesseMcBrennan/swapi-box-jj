@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { Card } from "../Card";
 import './styles.css';
 
-export const CardContainer = ({ peopleData }) => {
-  const displayPeopleCards = peopleData.map(person => <Card {...person} />);
+export const CardContainer = ({ peopleData, planetData, vehicleData, favoritesData }) => {
+  // const displayPeopleCards = peopleData.map(person => <Card {...person} />);
 
   return (
     <div>
-      {displayPeopleCards}
+   {/*   {displayPeopleCards}*/}
     </div>
   );
 };

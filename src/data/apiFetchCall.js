@@ -52,9 +52,57 @@ const getSpeciesData = async (speciesUrl) => {
 };
 
 export const getVehicleData = async (url) => {
-  console.log('get vehicle data called');
+  const vehicleUrl = "https://swapi.co/api/vehicles/"
+  const response = await fetch(vehicleUrl)
+  const rawVehicleData = await response.json();
+  return await cleanVehicleData(rawVehicleData);
 };
+  
+const cleanVehicleData = (rawVehicleData) => {
+  return rawVehicleData.results.map(vehicle => {
+    const name = vehicle.name
+    const model = vehicle.model
+    const passengers = vehicle.passengers
+    const vehicleClass = vehicle.vehicle_class
+    return { name, model, passengers, vehicleClass }
+  })
+}
 
 export const getPlanetData = async (url) => {
-  console.log('get planet data called');
+  const planetUrl = "https://swapi.co/api/planets/"
+  const response = await fetch(planetUrl)
+  const rawPlanetData = await response.json();
+  return cleanPlanetData(rawPlanetData)
 };
+
+const cleanPlanetData = async (rawPlanetData) => {
+  const x = rawPlanetData.results.map( async planet => {
+    const name = planet.name
+    const climate = planet.climate
+    const population = planet.population
+    const residentsArray = planet.residents.map(async residentUrl => {
+      return await getResident(residentUrl)
+    })
+    return await Promise.all(residentsArray)
+  })
+  return await Promise.all(x)
+}
+
+const getResident = async (residentUrl) => {
+  const response = await fetch(residentUrl);
+  return await response.json();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
