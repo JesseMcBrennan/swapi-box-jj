@@ -18,5 +18,5 @@ export const IntroContainer = ({ filmData }) => {
 }; 
 
 IntroContainer.propTypes = {
-  filmData: PropTypes.object
+  filmData: PropTypes.array
 };
