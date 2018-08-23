@@ -1,6 +1,5 @@
 export const getFilmData = async (url) => {
-  const filmUrl = "https://swapi.co/api/films/";
-  const response = await fetch(filmUrl);
+  const response = await fetch(url);
   const rawFilmData = await response.json();
   const cleanedData = await cleanFilmData(rawFilmData.results);
   return cleanedData;
@@ -15,8 +14,7 @@ const cleanFilmData = (rawFilmData) => {
 };
 
 export const getPeopleData = async (url) =>{
-  const peopleUrl = "https://swapi.co/api/people/";
-  const response = await fetch(peopleUrl);
+  const response = await fetch(url);
   const rawPeopleData = await response.json();
   return await cleanPeopleData(rawPeopleData.results);
 };
@@ -37,23 +35,20 @@ const cleanPeopleData = async (rawPeopleData) => {
 const getWorldData = async (worldUrl) => {
   const response = await fetch(worldUrl);
   const worldData = await response.json();
-  return {
-    planet: worldData.name,
-    population: worldData.population
-  };
+  const planet = worldData.name;
+  const population = worldData.population;
+  return {planet, population};
 };
 
 const getSpeciesData = async (speciesUrl) => {
   const response = await fetch(speciesUrl);
   const speciesData = await response.json();
-  return {
-    species: speciesData.name
-  };
+  const species = speciesData.name;
+  return {species};
 };
 
 export const getVehicleData = async (url) => {
-  const vehicleUrl = "https://swapi.co/api/vehicles/";
-  const response = await fetch(vehicleUrl);
+  const response = await fetch(url);
   const rawVehicleData = await response.json();
   return await cleanVehicleData(rawVehicleData);
 };
@@ -69,40 +64,28 @@ const cleanVehicleData = (rawVehicleData) => {
 };
 
 export const getPlanetData = async (url) => {
-  const planetUrl = "https://swapi.co/api/planets/";
-  const response = await fetch(planetUrl);
+  const response = await fetch(url);
   const rawPlanetData = await response.json();
   return cleanPlanetData(rawPlanetData);
 };
 
 const cleanPlanetData = async (rawPlanetData) => {
-  const x = rawPlanetData.results.map( async planet => {
+  const planetData = rawPlanetData.results.map(async planet => {
     const name = planet.name;
     const climate = planet.climate;
     const population = planet.population;
     const residentsArray = planet.residents.map(async residentUrl => {
       return await getResident(residentUrl);
     });
-    return await Promise.all(residentsArray);
+    const residents = await Promise.all(residentsArray);
+    return {name, climate, population, residents};
   });
-  return await Promise.all(x);
+  return await Promise.all(planetData);
 };
 
 const getResident = async (residentUrl) => {
   const response = await fetch(residentUrl);
-  return await response.json();
+  const rawData = await response.json();
+  const residentName = rawData.name;
+  return residentName;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
