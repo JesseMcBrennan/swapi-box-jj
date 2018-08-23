@@ -29,8 +29,8 @@ class App extends Component {
     this.setState({filmData});
   }
 
-  addFavorite = () => {
-    console.log('hi')
+  addFavorite = (data) => {
+    console.log(data)
   }
 
   handleClick = async (selectedData) => {
