@@ -57,7 +57,7 @@ class App extends Component {
 
   displaySelection(cardsToDisplay) {
     const { filmData, peopleData, vehicleData, planetData, favoritesData } = this.state;
-    const displayData = filmData.length ? <IntroContainer filmData={filmData} /> 
+    const displayFilmCrawl = filmData.length ? <IntroContainer filmData={filmData} /> 
       : <img src={loadingDroid} />;
     switch (cardsToDisplay) {
       case 'people':
@@ -69,7 +69,7 @@ class App extends Component {
       case 'favorites':
         return <CardContainer cardData={favoritesData} />;
       default:
-        return <div>{displayData}</div>;
+        return <div>{displayFilmCrawl}</div>;
     }
   }
 
