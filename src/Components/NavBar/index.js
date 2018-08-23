@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-export const NavBar = ({ handleClick, selectedButton }) => {
+export const NavBar = ({ handleClick, selectedButton, favoritesLength }) => {
   const click = (event) => handleClick(event.target.name);
   return (
     <div className="navBar" >
@@ -25,12 +25,13 @@ export const NavBar = ({ handleClick, selectedButton }) => {
         onClick={click} 
         name='favorites' 
         className={selectedButton === 'favorites' ? 'selected' : 'unselected'}
-      >Favorites</button>
+      >{`Favorites ${favoritesLength}`}</button>
     </div>
   );
 };
 
 NavBar.propTypes = {
   handleClick: PropTypes.func,
-  selectedButton: PropTypes.string
+  selectedButton: PropTypes.string,
+  favoritesLength: PropTypes.number
 };
