@@ -47,6 +47,34 @@ const getSpeciesData = async (speciesUrl) => {
   return {species};
 };
 
+export const getPlanetData = async (url) => {
+  const response = await fetch(url);
+  const rawPlanetData = await response.json();
+  return cleanPlanetData(rawPlanetData);
+};
+
+const cleanPlanetData = async (rawPlanetData) => {
+  const planetData = rawPlanetData.results.map(async planet => {
+    const name = planet.name;
+    const climate = planet.climate;
+    const population = planet.population;
+    const terrain = planet.terrain;
+    const residentsArray = planet.residents.map(async residentUrl => {
+      return await getResident(residentUrl);
+    });
+    const residents = await Promise.all(residentsArray);
+    return {name, terrain, climate, population, residents};
+  });
+  return await Promise.all(planetData);
+};
+
+const getResident = async (residentUrl) => {
+  const response = await fetch(residentUrl);
+  const rawData = await response.json();
+  const residentName = rawData.name;
+  return residentName;
+};
+
 export const getVehicleData = async (url) => {
   const response = await fetch(url);
   const rawVehicleData = await response.json();
@@ -63,29 +91,3 @@ const cleanVehicleData = (rawVehicleData) => {
   });
 };
 
-export const getPlanetData = async (url) => {
-  const response = await fetch(url);
-  const rawPlanetData = await response.json();
-  return cleanPlanetData(rawPlanetData);
-};
-
-const cleanPlanetData = async (rawPlanetData) => {
-  const planetData = rawPlanetData.results.map(async planet => {
-    const name = planet.name;
-    const climate = planet.climate;
-    const population = planet.population;
-    const residentsArray = planet.residents.map(async residentUrl => {
-      return await getResident(residentUrl);
-    });
-    const residents = await Promise.all(residentsArray);
-    return {name, climate, population, residents};
-  });
-  return await Promise.all(planetData);
-};
-
-const getResident = async (residentUrl) => {
-  const response = await fetch(residentUrl);
-  const rawData = await response.json();
-  const residentName = rawData.name;
-  return residentName;
-};
