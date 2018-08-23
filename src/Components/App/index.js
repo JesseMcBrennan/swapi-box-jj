@@ -29,6 +29,10 @@ class App extends Component {
     this.setState({filmData});
   }
 
+  addFavorite = () => {
+    console.log('hi')
+  }
+
   handleClick = async (selectedData) => {
     const peopleUrl = "https://swapi.co/api/people/";
     const vehicleUrl = "https://swapi.co/api/vehicles/";
@@ -61,13 +65,29 @@ class App extends Component {
       : <img src={loadingDroid} />;
     switch (cardsToDisplay) {
       case 'people':
-        return <CardContainer cardData={peopleData} />;
+        return 
+          <CardContainer 
+            cardData={peopleData} 
+            addFavorite={this.addFavorite}
+          />;
       case 'vehicles':
-        return <CardContainer cardData={vehicleData} />;
+        return 
+          <CardContainer 
+            cardData={vehicleData} 
+            addFavorite={this.addFavorite}
+          />;
       case 'planets':
-        return <CardContainer cardData={planetData} />;
+        return 
+          <CardContainer 
+            cardData={planetData} 
+            addFavorite={this.addFavorite}
+          />;
       case 'favorites':
-        return <CardContainer cardData={favoritesData} />;
+        return 
+          <CardContainer 
+            cardData={favoritesData} 
+            addFavorite={this.addFavorite}
+          />;
       default:
         return <div>{displayData}</div>;
     }
