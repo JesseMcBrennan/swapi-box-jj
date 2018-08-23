@@ -17,6 +17,7 @@ class App extends Component {
       favoritesData: [],
       cardsToDisplay: ''
     };
+    console.log(this.state.favoritesData)
   }
 
   componentDidMount() {
@@ -30,8 +31,22 @@ class App extends Component {
   }
 
   addFavorite = (data) => {
-    console.log(data)
+    const { favoritesData } = this.state
+    if (favoritesData.length) {
+      const favoriteNames = favoritesData.map(favorite => favorite.name)
+        if (!favoriteNames.includes(data.name)) {
+          this.setState({
+            favoritesData: [data, ...favoritesData]
+          })
+        }
+      } else {
+      this.setState({
+        favoritesData: [data]
+      })
+    }
   }
+
+  
 
   handleClick = async (selectedData) => {
     const peopleUrl = "https://swapi.co/api/people/";
