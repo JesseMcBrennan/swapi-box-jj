@@ -17,7 +17,6 @@ class App extends Component {
       favoritesData: [],
       cardsToDisplay: ''
     };
-    console.log(this.state.favoritesData)
   }
 
   componentDidMount() {
@@ -30,23 +29,23 @@ class App extends Component {
     this.setState({filmData});
   }
 
-  addFavorite = (data) => {
-    const { favoritesData } = this.state
+  toggleFavorites = (data) => {
+    const { favoritesData } = this.state;
     if (favoritesData.length) {
-      const favoriteNames = favoritesData.map(favorite => favorite.name)
-        if (!favoriteNames.includes(data.name)) {
-          this.setState({
-            favoritesData: [data, ...favoritesData]
-          })
-        }
+      const favoriteNames = favoritesData.map(favorite => favorite.name);
+      if (favoriteNames.includes(data.name)) {
+        const filteredFavorites = favoritesData.filter(
+          cardData => cardData.name !== data.name);
+        this.setState({favoritesData: filteredFavorites});
       } else {
+        this.setState({favoritesData: [data, ...favoritesData]});
+      }
+    } else {
       this.setState({
         favoritesData: [data]
-      })
+      });
     }
   }
-
-  
 
   handleClick = async (selectedData) => {
     const peopleUrl = "https://swapi.co/api/people/";
@@ -83,41 +82,46 @@ class App extends Component {
         return (
           <CardContainer 
             cardData={peopleData} 
-            addFavorite={this.addFavorite}
+            toggleFavorites={this.toggleFavorites}
             selected={cardsToDisplay} 
-          />)
+          />);
       case 'vehicles':
         return (
           <CardContainer 
             cardData={vehicleData} 
-            addFavorite={this.addFavorite}
+            toggleFavorites={this.toggleFavorites}
             selected={cardsToDisplay} 
-          />)
+          />);
       case 'planets':
         return (
           <CardContainer 
             cardData={planetData} 
-            addFavorite={this.addFavorite}
+            toggleFavorites={this.toggleFavorites}
             selected={cardsToDisplay} 
-          />)
+          />);
       case 'favorites':
         return (
           <CardContainer 
             cardData={favoritesData} 
-            addFavorite={this.addFavorite}
+            toggleFavorites={this.toggleFavorites}
             selected={cardsToDisplay} 
-          />)
+          />);
       default:
         return <div>{displayFilmCrawl}</div>;
     }
   }
 
   render() {
-    const { cardsToDisplay } = this.state;
+    const { cardsToDisplay, favoritesData } = this.state;
+    const favoritesLength = favoritesData.length;
     return (
       <div className="App">
         <h1 className='header'>SWAPI-Box</h1>
-        <NavBar handleClick={this.handleClick} selectedButton={cardsToDisplay}/>
+        <NavBar 
+          handleClick={this.handleClick}
+          favoritesLength={favoritesLength}
+          selectedButton={cardsToDisplay}
+        />
         {this.displaySelection(cardsToDisplay)}
       </div>
     );
