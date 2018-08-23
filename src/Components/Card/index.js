@@ -5,6 +5,7 @@ import './styles.css';
 export const Card = ({toggleFavorites, data}) => {
   const { name, planet, species, population, residents, 
     terrain, climate, model, passengers, vehicleClass } = data;
+  let displayResidents;
   const displayCard = (data) => {
     switch (planet || terrain || model) {
       case planet:
@@ -17,7 +18,7 @@ export const Card = ({toggleFavorites, data}) => {
           </div>
         );
       case data.terrain:
-        const displayResidents = residents.map(resident =><li>{resident}</li>);
+        displayResidents = residents.map((resident, index) =><li key={index}>{resident}</li>);
         return (
           <div>
             <h2>{name}</h2>
