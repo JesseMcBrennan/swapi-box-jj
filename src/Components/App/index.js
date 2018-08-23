@@ -17,6 +17,7 @@ class App extends Component {
       favoritesData: [],
       cardsToDisplay: ''
     };
+    console.log(this.state.favoritesData)
   }
 
   componentDidMount() {
@@ -28,6 +29,24 @@ class App extends Component {
     const filmData = await getFilmData(filmUrl);
     this.setState({filmData});
   }
+
+  addFavorite = (data) => {
+    const { favoritesData } = this.state
+    if (favoritesData.length) {
+      const favoriteNames = favoritesData.map(favorite => favorite.name)
+        if (!favoriteNames.includes(data.name)) {
+          this.setState({
+            favoritesData: [data, ...favoritesData]
+          })
+        }
+      } else {
+      this.setState({
+        favoritesData: [data]
+      })
+    }
+  }
+
+  
 
   handleClick = async (selectedData) => {
     const peopleUrl = "https://swapi.co/api/people/";
@@ -61,13 +80,33 @@ class App extends Component {
       : <img src={loadingDroid} />;
     switch (cardsToDisplay) {
       case 'people':
-        return <CardContainer cardData={peopleData} selected={cardsToDisplay} />;
+        return (
+          <CardContainer 
+            cardData={peopleData} 
+            addFavorite={this.addFavorite}
+            selected={cardsToDisplay} 
+          />)
       case 'vehicles':
-        return <CardContainer cardData={vehicleData} selected={cardsToDisplay} />;
+        return (
+          <CardContainer 
+            cardData={vehicleData} 
+            addFavorite={this.addFavorite}
+            selected={cardsToDisplay} 
+          />)
       case 'planets':
-        return <CardContainer cardData={planetData} selected={cardsToDisplay} />;
+        return (
+          <CardContainer 
+            cardData={planetData} 
+            addFavorite={this.addFavorite}
+            selected={cardsToDisplay} 
+          />)
       case 'favorites':
-        return <CardContainer cardData={favoritesData} selected={cardsToDisplay} />;
+        return (
+          <CardContainer 
+            cardData={favoritesData} 
+            addFavorite={this.addFavorite}
+            selected={cardsToDisplay} 
+          />)
       default:
         return <div>{displayFilmCrawl}</div>;
     }

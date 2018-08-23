@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import { Card } from "../Card";
 import './styles.css';
 
-export const CardContainer = ({ cardData, selected }) => {
-  const displayPeopleCards = cardData.map(data => (
-    <Card 
-      key={Date.now() * Math.random()} 
-      {...data} 
+export const CardContainer = ({ cardData, addFavorite, selected }) => {
+  const displayPeopleCards = cardData.map((data, index) => (
+    <Card  
+      data={data}
       selected={selected} 
+      addFavorite={addFavorite}
+      key={index}
     />)
   );
+
   return (
     <div className='card-container'>
       {displayPeopleCards}
