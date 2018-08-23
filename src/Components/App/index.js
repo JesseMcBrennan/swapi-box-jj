@@ -24,32 +24,30 @@ class App extends Component {
   }
 
   retrieveFilmData = async () => {
-    const filmData = await getFilmData();
-    this.setState({
-      filmData
-    });
+    const filmUrl = "https://swapi.co/api/films/";
+    const filmData = await getFilmData(filmUrl);
+    this.setState({filmData});
   }
 
   handleClick = async (selectedData) => {
-    let peopleData;
-    let vehicleData;
-    let planetData;
-    let favoritesData;
+    const peopleUrl = "https://swapi.co/api/people/";
+    const vehicleUrl = "https://swapi.co/api/vehicles/";
+    const planetUrl = "https://swapi.co/api/planets/";
+    const peopleData = await getPeopleData(peopleUrl);
+    const vehicleData = await getVehicleData(vehicleUrl);
+    const planetData = await getPlanetData(planetUrl);
+    const favoritesData = this.state.favoritesData;
     switch (selectedData) {
       case 'people':
-        peopleData = await getPeopleData();
         this.setState({peopleData, cardsToDisplay: selectedData});
         break;
       case 'vehicles':
-        vehicleData = await getVehicleData();
         this.setState({vehicleData, cardsToDisplay: selectedData});
         break;
       case 'planets':
-        planetData = await getPlanetData();
         this.setState({planetData, cardsToDisplay: selectedData});
         break;
       case 'favorites':
-        favoritesData = this.state.favoritesData;
         this.setState({favoritesData, cardsToDisplay: selectedData});
         break;
       default:
