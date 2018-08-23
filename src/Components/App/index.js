@@ -61,13 +61,13 @@ class App extends Component {
       : <img src={loadingDroid} />;
     switch (cardsToDisplay) {
       case 'people':
-        return <CardContainer cardData={peopleData} />;
+        return <CardContainer cardData={peopleData} selected={cardsToDisplay} />;
       case 'vehicles':
-        return <CardContainer cardData={vehicleData} />;
+        return <CardContainer cardData={vehicleData} selected={cardsToDisplay} />;
       case 'planets':
-        return <CardContainer cardData={planetData} />;
+        return <CardContainer cardData={planetData} selected={cardsToDisplay} />;
       case 'favorites':
-        return <CardContainer cardData={favoritesData} />;
+        return <CardContainer cardData={favoritesData} selected={cardsToDisplay} />;
       default:
         return <div>{displayFilmCrawl}</div>;
     }
