@@ -4,10 +4,9 @@ import { Card } from "../Card";
 import './styles.css';
 
 export const CardContainer = ({ cardData, addFavorite, selected }) => {
-  console.log(addFavorite)
   const displayPeopleCards = cardData.map((data, index) => (
     <Card  
-      {...data} 
+      data={data}
       selected={selected} 
       addFavorite={addFavorite}
       key={index}
