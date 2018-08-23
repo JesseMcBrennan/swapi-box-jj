@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-export const Card = ({name, homeworld, species, population }) => {
+export const Card = ({name, homeworld, species, population, addFavorite }) => {
   return (
-    <div onClick={console.log('')}>
+    <div onClick={() => addFavorite(id)))}>
       <h2>{name}</h2>
       <h2>{homeworld}</h2>
       <h2>{species}</h2>
