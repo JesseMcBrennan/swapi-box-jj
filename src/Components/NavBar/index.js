@@ -13,14 +13,14 @@ export const NavBar = ({ handleClick, selectedButton }) => {
       >People</button>
       <button 
         onClick={click} 
-        name='vehicles' 
-        className={selectedButton === 'vehicles' ? 'selected' : 'unselected'}
-      >Vehicles</button>
-      <button 
-        onClick={click} 
         name='planets' 
         className={selectedButton === 'planets' ? 'selected' : 'unselected'}
       >Planets</button>
+      <button 
+        onClick={click} 
+        name='vehicles' 
+        className={selectedButton === 'vehicles' ? 'selected' : 'unselected'}
+      >Vehicles</button>
       <button 
         onClick={click} 
         name='favorites' 
