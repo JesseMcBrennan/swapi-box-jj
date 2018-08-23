@@ -45,9 +45,7 @@ class App extends Component {
       })
     }
   }
-
-  
-
+   
   handleClick = async (selectedData) => {
     const peopleUrl = "https://swapi.co/api/people/";
     const vehicleUrl = "https://swapi.co/api/vehicles/";
