@@ -17,7 +17,7 @@ export const Card = ({toggleFavorites, data}) => {
             <h2>Species: {species}</h2>
           </div>
         );
-      case data.terrain:
+      case terrain:
         displayResidents = residents.map((resident, index) =><li key={index}>{resident}</li>);
         return (
           <div>
