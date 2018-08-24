@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IntroContainer renders the IntroContainer with the correct props 1`] = `undefined`;
