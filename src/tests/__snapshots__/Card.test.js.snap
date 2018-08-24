@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card renders the Card with the correct props 1`] = `undefined`;
