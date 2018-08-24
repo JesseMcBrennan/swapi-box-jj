@@ -12,3 +12,10 @@ describe('NavBar', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
+
+
+//mock the window fetch method
+
+//jest.fn.mockImplementation
+
+//
