@@ -4,11 +4,7 @@ exports[`NavBar renders the NavBar with the correct props 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
-    favoritesLength={
-        Array [
-            "something",
-          ]
-    }
+    favoritesLength={3}
     handClick={[Function]}
     selectedButton="a button"
 />,
@@ -51,7 +47,7 @@ ShallowWrapper {
           name="favorites"
           onClick={[Function]}
 >
-          Favorites something
+          Favorites 3
 </button>,
       ],
       "className": "navBar",
@@ -105,13 +101,13 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Favorites something",
+          "children": "Favorites 3",
           "className": "unselected",
           "name": "favorites",
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Favorites something",
+        "rendered": "Favorites 3",
         "type": "button",
       },
     ],
@@ -150,7 +146,7 @@ ShallowWrapper {
             name="favorites"
             onClick={[Function]}
 >
-            Favorites something
+            Favorites 3
 </button>,
         ],
         "className": "navBar",
@@ -204,13 +200,13 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Favorites something",
+            "children": "Favorites 3",
             "className": "unselected",
             "name": "favorites",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Favorites something",
+          "rendered": "Favorites 3",
           "type": "button",
         },
       ],

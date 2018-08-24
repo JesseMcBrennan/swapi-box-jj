@@ -10,7 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      filmData: [],
+      filmData: {},
       peopleData: [],
       vehicleData: [],
       planetData: [],
@@ -26,7 +26,9 @@ class App extends Component {
   retrieveFilmData = async () => {
     const filmUrl = "https://swapi.co/api/films/";
     const filmData = await getFilmData(filmUrl);
-    this.setState({filmData});
+    const randomNumber = Math.floor(Math.random() * (7));
+    const randomFilmData = filmData[`${randomNumber}`];
+    this.setState({filmData: randomFilmData});
   }
 
   toggleFavorites = (data) => {
@@ -75,36 +77,32 @@ class App extends Component {
 
   displaySelection(cardsToDisplay) {
     const { filmData, peopleData, vehicleData, planetData, favoritesData } = this.state;
-    const displayFilmCrawl = filmData.length ? <IntroContainer filmData={filmData} /> 
+    const displayFilmCrawl = filmData.crawl ? <IntroContainer filmData={filmData} /> 
       : <img src={loadingDroid} />;
     switch (cardsToDisplay) {
       case 'people':
         return (
           <CardContainer 
-            cardData={peopleData} 
+            cardsData={peopleData} 
             toggleFavorites={this.toggleFavorites}
-            selected={cardsToDisplay} 
           />);
       case 'vehicles':
         return (
           <CardContainer 
-            cardData={vehicleData} 
+            cardsData={vehicleData} 
             toggleFavorites={this.toggleFavorites}
-            selected={cardsToDisplay} 
           />);
       case 'planets':
         return (
           <CardContainer 
-            cardData={planetData} 
+            cardsData={planetData} 
             toggleFavorites={this.toggleFavorites}
-            selected={cardsToDisplay} 
           />);
       case 'favorites':
         return (
           <CardContainer 
-            cardData={favoritesData} 
+            cardsData={favoritesData} 
             toggleFavorites={this.toggleFavorites}
-            selected={cardsToDisplay} 
           />);
       default:
         return <div>{displayFilmCrawl}</div>;
