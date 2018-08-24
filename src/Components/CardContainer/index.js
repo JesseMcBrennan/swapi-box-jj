@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import { Card } from "../Card";
 import './styles.css';
 
-export const CardContainer = ({ cardData, toggleFavorites, selected }) => {
-  const displayPeopleCards = cardData.map((data, index) => (
+export const CardContainer = ({ cardsData, toggleFavorites }) => {
+  const displayPeopleCards = cardsData.map((data, index) => (
     <Card  
       data={data}
-      selected={selected} 
       toggleFavorites={toggleFavorites}
       key={index}
     />)
@@ -21,7 +20,6 @@ export const CardContainer = ({ cardData, toggleFavorites, selected }) => {
 };
 
 CardContainer.propTypes = {
-  cardData: PropTypes.array,
-  selected: PropTypes.string,
+  cardsData: PropTypes.array,
   toggleFavorites: PropTypes.func
 };
