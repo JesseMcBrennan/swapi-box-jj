@@ -1,8 +1,17 @@
 .card {
   border: 2px solid black;
   margin: 1em 0;
+  border-radius: 10px;
+  background-color: rgba(181,184,190, 0.5);
+  text-align: center;
+  width: 20%;
+  min-height:400px;
 }
 
 h2 {
-  margin: .1em;
+  /*margin: .1em;*/
+}
+
+.selected {
+  background-color: rgba(255,0,0, 0.8)
 }
