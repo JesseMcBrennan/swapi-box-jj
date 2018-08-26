@@ -17,11 +17,6 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h1
-          className="header"
->
-          SWAPI-Box
-</h1>,
         <Unknown
           favoritesLength={0}
           handleClick={[Function]}
@@ -37,18 +32,6 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "SWAPI-Box",
-          "className": "header",
-        },
-        "ref": null,
-        "rendered": "SWAPI-Box",
-        "type": "h1",
-      },
       Object {
         "instance": null,
         "key": undefined,
@@ -95,11 +78,6 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h1
-            className="header"
->
-            SWAPI-Box
-</h1>,
           <Unknown
             favoritesLength={0}
             handleClick={[Function]}
@@ -115,18 +93,6 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "SWAPI-Box",
-            "className": "header",
-          },
-          "ref": null,
-          "rendered": "SWAPI-Box",
-          "type": "h1",
-        },
         Object {
           "instance": null,
           "key": undefined,
