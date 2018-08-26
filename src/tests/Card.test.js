@@ -19,4 +19,16 @@ describe('Card', () => {
   it('renders the Card with the correct props', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('the list items should change depending on what card is rendering', () => {
+    mockPerson = {name: "Luke Skywalker", planet: "Tatooine", species: "Human", population: "200000"}
+
+    const mockEvent = {target:{name: 'people'}}
+
+    wrapper.find('[name="people"]').simulate('click', mockEvent)
+
+
+
+  })
+
 });
