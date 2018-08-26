@@ -114,7 +114,6 @@ class App extends Component {
     const favoritesLength = favoritesData.length;
     return (
       <div className="App">
-        <h1 className='header'>SWAPI-Box</h1>
         <NavBar 
           handleClick={this.handleClick}
           favoritesLength={favoritesLength}
