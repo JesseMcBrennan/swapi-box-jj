@@ -1,6 +1,7 @@
 .target {
+  border: 2px solid red;
   position: absolute;
-  top: -920px;
+  top: -980px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -14,8 +15,7 @@
 
 .introContainer {
   padding-top: 1600px;
-  animation: autoscroll 100s linear;
-  /* color: #A54B50; */
+  animation: autoscroll 900s linear;
   color: #F1634E
 }
 
