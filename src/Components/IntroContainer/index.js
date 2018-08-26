@@ -8,8 +8,8 @@ export const IntroContainer = ({ filmData }) => {
   return (
     <div className='target'>
       <div className="introContainer">
-        <p>{crawl}</p>
         <h1>{title}</h1>
+        <p>{crawl}</p>
         <h2>{releaseDate}</h2>
       </div>
     </div>
