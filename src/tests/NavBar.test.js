@@ -23,39 +23,39 @@ describe('NavBar', () => {
 
   it('renders the NavBar with the correct props', () => {
     expect(wrapper).toMatchSnapshot();
-  })
+  });
 
   it('should change the className from people to selected when selected', () => {
-    const mockEvent = {target: {name:'people'}}
+    const mockEvent = {target: {name:'people'}};
 
-    wrapper.find('[name="people"]').simulate('click', mockEvent)
+    wrapper.find('[name="people"]').simulate('click', mockEvent);
     wrapper.update();
-    expect(wrapper.find('[name="people"]').hasClass('selected'))
+    expect(wrapper.find('[name="people"]').hasClass('selected'));
 
   });
 
   it('should change the className from vehicles to selected when selected', () => {
-    const mockEvent = {target: {name:'vehicles'}}
+    const mockEvent = {target: {name:'vehicles'}};
 
-    wrapper.find('[name="vehicles"]').simulate('click', mockEvent)
+    wrapper.find('[name="vehicles"]').simulate('click', mockEvent);
     wrapper.update();
-    expect(wrapper.find('[name="vehicles"]').hasClass('selected'))
+    expect(wrapper.find('[name="vehicles"]').hasClass('selected'));
   });
 
   it('should change the className from planets to selected when selected', () => {
-    const mockEvent = {target: {name:'planets'}}
+    const mockEvent = {target: {name:'planets'}};
 
-    wrapper.find('[name="planets"]').simulate('click', mockEvent)
+    wrapper.find('[name="planets"]').simulate('click', mockEvent);
     wrapper.update();
-    expect(wrapper.find('[name="planets"]').hasClass('selected'))
+    expect(wrapper.find('[name="planets"]').hasClass('selected'));
   });
 
   it('should change the className from people to selected when selected', () => {
-    const mockEvent = {target: {name:'favorites'}}
+    const mockEvent = {target: {name:'favorites'}};
 
-    wrapper.find('[name="favorites"]').simulate('click', mockEvent)
+    wrapper.find('[name="favorites"]').simulate('click', mockEvent);
     wrapper.update();
-    expect(wrapper.find('[name="favorites"]').hasClass('selected'))
+    expect(wrapper.find('[name="favorites"]').hasClass('selected'));
   });
 
 });
