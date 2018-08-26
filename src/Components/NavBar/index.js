@@ -6,6 +6,8 @@ export const NavBar = ({ handleClick, selectedButton, favoritesLength }) => {
   const click = (event) => handleClick(event.target.name);
   return (
     <div className="navBar" >
+      <h1 className='header'>SWAPI-Box</h1>
+      <div className="buttons-container">
       <button 
         onClick={click} 
         name='people' 
@@ -26,6 +28,7 @@ export const NavBar = ({ handleClick, selectedButton, favoritesLength }) => {
         name='favorites' 
         className={selectedButton === 'favorites' ? 'selected' : 'unselected'}
       >{`Favorites ${favoritesLength}`}</button>
+      </div>
     </div>
   );
 };
