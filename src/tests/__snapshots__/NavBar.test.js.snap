@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NavBar renders the NavBar with the correct props 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
+ReactWrapper {
   Symbol(enzyme.__unrendered__): <Unknown
     favoritesLength={3}
     handClick={[Function]}
@@ -15,107 +14,46 @@ ShallowWrapper {
     "simulateEvent": [Function],
     "unmount": [Function],
   },
+  Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": Array [
-        <button
-          className="unselected"
-          name="people"
-          onClick={[Function]}
->
-          People
-</button>,
-        <button
-          className="unselected"
-          name="planets"
-          onClick={[Function]}
->
-          Planets
-</button>,
-        <button
-          className="unselected"
-          name="vehicles"
-          onClick={[Function]}
->
-          Vehicles
-</button>,
-        <button
-          className="unselected"
-          name="favorites"
-          onClick={[Function]}
->
-          Favorites 3
-</button>,
-      ],
-      "className": "navBar",
+      "favoritesLength": 3,
+      "handClick": [Function],
+      "selectedButton": "a button",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "People",
-          "className": "unselected",
-          "name": "people",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "People",
-        "type": "button",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Planets",
-          "className": "unselected",
-          "name": "planets",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Planets",
-        "type": "button",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Vehicles",
-          "className": "unselected",
-          "name": "vehicles",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Vehicles",
-        "type": "button",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Favorites 3",
-          "className": "unselected",
-          "name": "favorites",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Favorites 3",
-        "type": "button",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
+    "rendered": Object {
+      "instance": <div
+        class="navBar"
+>
+        <button
+                name="people"
+                class="unselected"
+        >
+                People
+        </button>
+        <button
+                name="planets"
+                class="unselected"
+        >
+                Planets
+        </button>
+        <button
+                name="vehicles"
+                class="unselected"
+        >
+                Vehicles
+        </button>
+        <button
+                name="favorites"
+                class="unselected"
+        >
+                Favorites 3
+        </button>
+</div>,
       "key": undefined,
       "nodeType": "host",
       "props": Object {
@@ -154,7 +92,12 @@ ShallowWrapper {
       "ref": null,
       "rendered": Array [
         Object {
-          "instance": null,
+          "instance": <button
+            name="people"
+            class="unselected"
+>
+            People
+</button>,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
@@ -164,11 +107,18 @@ ShallowWrapper {
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "People",
+          "rendered": Array [
+            "People",
+          ],
           "type": "button",
         },
         Object {
-          "instance": null,
+          "instance": <button
+            name="planets"
+            class="unselected"
+>
+            Planets
+</button>,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
@@ -178,11 +128,18 @@ ShallowWrapper {
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Planets",
+          "rendered": Array [
+            "Planets",
+          ],
           "type": "button",
         },
         Object {
-          "instance": null,
+          "instance": <button
+            name="vehicles"
+            class="unselected"
+>
+            Vehicles
+</button>,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
@@ -192,11 +149,18 @@ ShallowWrapper {
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Vehicles",
+          "rendered": Array [
+            "Vehicles",
+          ],
           "type": "button",
         },
         Object {
-          "instance": null,
+          "instance": <button
+            name="favorites"
+            class="unselected"
+>
+            Favorites 3
+</button>,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
@@ -206,11 +170,181 @@ ShallowWrapper {
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Favorites 3",
+          "rendered": Array [
+            "Favorites 3",
+          ],
           "type": "button",
         },
       ],
       "type": "div",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "favoritesLength": 3,
+        "handClick": [Function],
+        "selectedButton": "a button",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": <div
+          class="navBar"
+>
+          <button
+                    name="people"
+                    class="unselected"
+          >
+                    People
+          </button>
+          <button
+                    name="planets"
+                    class="unselected"
+          >
+                    Planets
+          </button>
+          <button
+                    name="vehicles"
+                    class="unselected"
+          >
+                    Vehicles
+          </button>
+          <button
+                    name="favorites"
+                    class="unselected"
+          >
+                    Favorites 3
+          </button>
+</div>,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <button
+              className="unselected"
+              name="people"
+              onClick={[Function]}
+>
+              People
+</button>,
+            <button
+              className="unselected"
+              name="planets"
+              onClick={[Function]}
+>
+              Planets
+</button>,
+            <button
+              className="unselected"
+              name="vehicles"
+              onClick={[Function]}
+>
+              Vehicles
+</button>,
+            <button
+              className="unselected"
+              name="favorites"
+              onClick={[Function]}
+>
+              Favorites 3
+</button>,
+          ],
+          "className": "navBar",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": <button
+              name="people"
+              class="unselected"
+>
+              People
+</button>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "People",
+              "className": "unselected",
+              "name": "people",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              "People",
+            ],
+            "type": "button",
+          },
+          Object {
+            "instance": <button
+              name="planets"
+              class="unselected"
+>
+              Planets
+</button>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Planets",
+              "className": "unselected",
+              "name": "planets",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Planets",
+            ],
+            "type": "button",
+          },
+          Object {
+            "instance": <button
+              name="vehicles"
+              class="unselected"
+>
+              Vehicles
+</button>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Vehicles",
+              "className": "unselected",
+              "name": "vehicles",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Vehicles",
+            ],
+            "type": "button",
+          },
+          Object {
+            "instance": <button
+              name="favorites"
+              class="unselected"
+>
+              Favorites 3
+</button>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Favorites 3",
+              "className": "unselected",
+              "name": "favorites",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Favorites 3",
+            ],
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
