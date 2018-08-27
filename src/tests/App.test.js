@@ -14,7 +14,7 @@ describe('App', () => {
     mockFavorite = {
       Homeworld: 'Tatooine',
       Population: 200000,
-      Species: 'Human'
+      Species: 'Humans'
 
     }
   });
@@ -62,6 +62,7 @@ describe('App', () => {
 
   describe('displaySelection tests', () => {
     it('should return a CardContainer with peopleData', () => {
+
      const mockState = { filmData: {},
         peopleData: [],
         vehicleData: [],
@@ -71,7 +72,6 @@ describe('App', () => {
 
       wrapper.instance().displaySelection('people')
       const actualState = wrapper.instance().state
-
       expect(actualState).toEqual(mockState)
     });
   });
