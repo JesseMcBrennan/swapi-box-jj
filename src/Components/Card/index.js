@@ -7,7 +7,6 @@ export const Card = ({toggleFavorites, data}) => {
     terrain, climate, model, passengers, vehicleClass } = data;
   let displayResidents;
   const displayCard = (data) => {
-    console.log(data)
     switch (planet || terrain || model) {
       case planet:
         return (
