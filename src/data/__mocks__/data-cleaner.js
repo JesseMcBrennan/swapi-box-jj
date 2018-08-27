@@ -10,3 +10,18 @@ export const mockCleanedPersonData = {
   population: "2000000000",
   species: "Human"
 };
+
+export const mockCleanedPlanetData = { 
+  climate: "temperate",
+  name: "Alderaan",
+  population: "2000000000",
+  residents: ["Leia Organa", "Bail Prestor Organa", "Raymus Antilles"],
+  terrain: "grasslands, mountains"
+};
+
+export const mockCleanedVehicleData = {
+  model: "Digger Crawler",
+  name: "Sand Crawler",
+  passengers: "30",
+  vehicleClass: "wheeled"
+};

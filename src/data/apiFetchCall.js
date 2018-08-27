@@ -5,7 +5,7 @@ export const getFilmData = async (url) => {
   return cleanedData;
 };
 
-const cleanFilmData = (rawFilmData) => {
+export const cleanFilmData = (rawFilmData) => {
   return rawFilmData.map(film => ({
     title: film.title,
     crawl: film.opening_crawl,
@@ -18,11 +18,11 @@ const cleanFilmData = (rawFilmData) => {
 export const getPeopleData = async (url) =>{
   const response = await fetch(url);
   const rawPeopleData = await response.json();
-  return await cleanPeopleData(rawPeopleData.results);
+  return await cleanPeopleData(rawPeopleData);
 };
 
 export const cleanPeopleData = async (rawPeopleData) => {
-  const unfinishedPeople = rawPeopleData.map(async person => {
+  const unfinishedPeople = rawPeopleData.results.map(async person => {
     const name = person.name;
     const species = person.species[0];
     const planet = person.homeworld;
@@ -68,7 +68,7 @@ export const getPlanetData = async (url) => {
   return cleanPlanetData(rawPlanetData);
 };
 
-const cleanPlanetData = async (rawPlanetData) => {
+export const cleanPlanetData = async (rawPlanetData) => {
   const unfinishedPlanet = await rawPlanetData.results.map(async planet => {
     const name = planet.name;
     const climate = planet.climate;
@@ -103,7 +103,7 @@ export const getVehicleData = async (url) => {
   return await cleanVehicleData(rawVehicleData);
 };
   
-const cleanVehicleData = (rawVehicleData) => {
+export const cleanVehicleData = (rawVehicleData) => {
   return rawVehicleData.results.map(vehicle => {
     const name = vehicle.name;
     const model = vehicle.model;
