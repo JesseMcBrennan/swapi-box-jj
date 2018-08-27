@@ -25,8 +25,8 @@ ShallowWrapper {
       "children": <div
         className="introContainer"
 >
-        <p />
         <h1 />
+        <p />
         <h2 />
 </div>,
       "className": "target",
@@ -38,8 +38,8 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <p />,
           <h1 />,
+          <p />,
           <h2 />,
         ],
         "className": "introContainer",
@@ -55,7 +55,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": null,
-          "type": "p",
+          "type": "h1",
         },
         Object {
           "instance": null,
@@ -66,7 +66,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": null,
-          "type": "h1",
+          "type": "p",
         },
         Object {
           "instance": null,
@@ -93,8 +93,8 @@ ShallowWrapper {
         "children": <div
           className="introContainer"
 >
-          <p />
           <h1 />
+          <p />
           <h2 />
 </div>,
         "className": "target",
@@ -106,8 +106,8 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <p />,
             <h1 />,
+            <p />,
             <h2 />,
           ],
           "className": "introContainer",
@@ -123,7 +123,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": null,
-            "type": "p",
+            "type": "h1",
           },
           Object {
             "instance": null,
@@ -134,7 +134,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": null,
-            "type": "h1",
+            "type": "p",
           },
           Object {
             "instance": null,
