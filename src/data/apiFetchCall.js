@@ -5,7 +5,7 @@ export const getFilmData = async (url) => {
   return cleanedData;
 };
 
-const cleanFilmData = (rawFilmData) => {
+export const cleanFilmData = (rawFilmData) => {
   return rawFilmData.map(film => ({
     title: film.title,
     crawl: film.opening_crawl,
@@ -18,11 +18,11 @@ const cleanFilmData = (rawFilmData) => {
 export const getPeopleData = async (url) =>{
   const response = await fetch(url);
   const rawPeopleData = await response.json();
-  return await cleanPeopleData(rawPeopleData.results);
+  return await cleanPeopleData(rawPeopleData);
 };
 
-const cleanPeopleData = async (rawPeopleData) => {
-  const unfinishedPeople = rawPeopleData.map(async person => {
+export const cleanPeopleData = async (rawPeopleData) => {
+  const unfinishedPeople = rawPeopleData.results.map(async person => {
     const name = person.name;
     const species = person.species[0];
     const planet = person.homeworld;
@@ -31,18 +31,18 @@ const cleanPeopleData = async (rawPeopleData) => {
   const peopleWithNames = await Promise.all(unfinishedPeople);
   
   const peopleWithHomeworld = await peopleWithNames.map(async person => {
-    const worldUrl = person.planet
+    const worldUrl = person.planet;
     const receivedWorldData = await getWorldData(worldUrl);
     return {...person, ...receivedWorldData};
-  })
-  const namedPeopleWithHomes = await Promise.all(peopleWithHomeworld)
+  });
+  const namedPeopleWithHomes = await Promise.all(peopleWithHomeworld);
 
   const peopleDataCompleted = await namedPeopleWithHomes.map(async person => {
-    const speciesUrl = person.species
+    const speciesUrl = person.species;
     const receivedSpeciesData = await getSpeciesData(speciesUrl);
     return {...person, ...receivedSpeciesData};
-  }) 
-  return await Promise.all(peopleDataCompleted)
+  }); 
+  return await Promise.all(peopleDataCompleted);
 };
 
 const getWorldData = async (worldUrl) => {
@@ -68,28 +68,24 @@ export const getPlanetData = async (url) => {
   return cleanPlanetData(rawPlanetData);
 };
 
-const cleanPlanetData = async (rawPlanetData) => {
+export const cleanPlanetData = async (rawPlanetData) => {
   const unfinishedPlanet = await rawPlanetData.results.map(async planet => {
     const name = planet.name;
     const climate = planet.climate;
     const population = planet.population;
     const terrain = planet.terrain;
-    const residentsArray = planet.residents
-    // const residentsArray = planet.residents.map(async residentUrl => {
-    //   return await getResident(residentUrl);
-    // });
-    // const residents = await Promise.all(residentsArray);
+    const residentsArray = planet.residents;
     return {name, terrain, climate, population, residents: residentsArray};
   });
   const planetsWithoutResidents = await Promise.all(unfinishedPlanet);
 
   const finishedPlanets = planetsWithoutResidents.map(async planet => {
-    const residents = planet.residents
-    const unresolvedArray = await residents.map(async resident => getResident(resident))
-    const residentsData = await Promise.all(unresolvedArray)
-    return {...planet, residents: residentsData}  
-  })
-  return await Promise.all(finishedPlanets)
+    const residents = planet.residents;
+    const unresolvedArray = await residents.map(async resident => getResident(resident));
+    const residentsData = await Promise.all(unresolvedArray);
+    return {...planet, residents: residentsData};  
+  });
+  return await Promise.all(finishedPlanets);
 };
 
 const getResident = async (residentUrl) => {
@@ -107,7 +103,7 @@ export const getVehicleData = async (url) => {
   return await cleanVehicleData(rawVehicleData);
 };
   
-const cleanVehicleData = (rawVehicleData) => {
+export const cleanVehicleData = (rawVehicleData) => {
   return rawVehicleData.results.map(vehicle => {
     const name = vehicle.name;
     const model = vehicle.model;

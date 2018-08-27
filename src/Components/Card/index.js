@@ -37,8 +37,6 @@ export const Card = ({toggleFavorites, data}) => {
             <h2>Class: {vehicleClass}</h2>
           </div>
         );
-      default:
-        break;
     }
   };
 
