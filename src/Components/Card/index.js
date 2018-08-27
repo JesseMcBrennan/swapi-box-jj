@@ -11,7 +11,7 @@ export const Card = ({toggleFavorites, data}) => {
       case planet:
         return (
           <div>
-            <h2>{name}</h2>
+            <h2 className='title'>{name}</h2>
             <h2>Homeworld: {planet}</h2>
             <h2>Population: {population}</h2>
             <h2>Species: {species}</h2>
@@ -21,7 +21,7 @@ export const Card = ({toggleFavorites, data}) => {
         displayResidents = residents.map((resident, index) =><li key={index}>{resident}</li>);
         return (
           <div>
-            <h2>{name}</h2>
+            <h2 className='title'>{name}</h2>
             <h2>Terrain: {terrain}</h2>
             <h2>Population: {population}</h2>
             <h2>Climate: {climate}</h2>
@@ -31,7 +31,7 @@ export const Card = ({toggleFavorites, data}) => {
       case model:
         return (
           <div>
-            <h2>{name}</h2>
+            <h2 className='title'>{name}</h2>
             <h2>Model: {model}</h2>
             <h2>Passengers: {passengers}</h2>
             <h2>Class: {vehicleClass}</h2>

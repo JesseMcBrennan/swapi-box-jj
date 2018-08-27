@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import loadingDroid from '../../loading.gif';
+import loadingGif from '../../loading-droid.gif';
 import { getFilmData, getPeopleData, getVehicleData, getPlanetData } from '../../data/apiFetchCall';
 import { IntroContainer } from '../IntroContainer';
 import { CardContainer } from '../CardContainer';
@@ -78,7 +78,7 @@ class App extends Component {
   displaySelection(cardsToDisplay) {
     const { filmData, peopleData, vehicleData, planetData, favoritesData } = this.state;
     const displayFilmCrawl = filmData.crawl ? <IntroContainer filmData={filmData} /> 
-      : <img src={loadingDroid} />;
+      : <img className='loading-gif' src={loadingGif} />;
     switch (cardsToDisplay) {
       case 'people':
         return (
