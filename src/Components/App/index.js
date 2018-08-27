@@ -70,8 +70,6 @@ class App extends Component {
       case 'favorites':
         this.setState({favoritesData, cardsToDisplay: selectedData});
         break;
-      default:
-        break;
     }
   }
 

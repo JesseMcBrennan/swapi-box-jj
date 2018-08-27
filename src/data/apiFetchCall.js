@@ -21,7 +21,7 @@ export const getPeopleData = async (url) =>{
   return await cleanPeopleData(rawPeopleData.results);
 };
 
-const cleanPeopleData = async (rawPeopleData) => {
+export const cleanPeopleData = async (rawPeopleData) => {
   const unfinishedPeople = rawPeopleData.map(async person => {
     const name = person.name;
     const species = person.species[0];
@@ -31,18 +31,18 @@ const cleanPeopleData = async (rawPeopleData) => {
   const peopleWithNames = await Promise.all(unfinishedPeople);
   
   const peopleWithHomeworld = await peopleWithNames.map(async person => {
-    const worldUrl = person.planet
+    const worldUrl = person.planet;
     const receivedWorldData = await getWorldData(worldUrl);
     return {...person, ...receivedWorldData};
-  })
-  const namedPeopleWithHomes = await Promise.all(peopleWithHomeworld)
+  });
+  const namedPeopleWithHomes = await Promise.all(peopleWithHomeworld);
 
   const peopleDataCompleted = await namedPeopleWithHomes.map(async person => {
-    const speciesUrl = person.species
+    const speciesUrl = person.species;
     const receivedSpeciesData = await getSpeciesData(speciesUrl);
     return {...person, ...receivedSpeciesData};
-  }) 
-  return await Promise.all(peopleDataCompleted)
+  }); 
+  return await Promise.all(peopleDataCompleted);
 };
 
 const getWorldData = async (worldUrl) => {
@@ -74,22 +74,18 @@ const cleanPlanetData = async (rawPlanetData) => {
     const climate = planet.climate;
     const population = planet.population;
     const terrain = planet.terrain;
-    const residentsArray = planet.residents
-    // const residentsArray = planet.residents.map(async residentUrl => {
-    //   return await getResident(residentUrl);
-    // });
-    // const residents = await Promise.all(residentsArray);
+    const residentsArray = planet.residents;
     return {name, terrain, climate, population, residents: residentsArray};
   });
   const planetsWithoutResidents = await Promise.all(unfinishedPlanet);
 
   const finishedPlanets = planetsWithoutResidents.map(async planet => {
-    const residents = planet.residents
-    const unresolvedArray = await residents.map(async resident => getResident(resident))
-    const residentsData = await Promise.all(unresolvedArray)
-    return {...planet, residents: residentsData}  
-  })
-  return await Promise.all(finishedPlanets)
+    const residents = planet.residents;
+    const unresolvedArray = await residents.map(async resident => getResident(resident));
+    const residentsData = await Promise.all(unresolvedArray);
+    return {...planet, residents: residentsData};  
+  });
+  return await Promise.all(finishedPlanets);
 };
 
 const getResident = async (residentUrl) => {

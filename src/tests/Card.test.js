@@ -21,7 +21,6 @@ describe('Card', () => {
   });
 
   it('the list items should change depending on what card is rendering', () => {
-
     const mockEvent = {target: {name: 'people'}};
 
     wrapper.find('.card').simulate('click', mockEvent);
@@ -32,7 +31,7 @@ describe('Card', () => {
     const mockEvent = {target: {name: 'people'}};
 
     wrapper.find('.people').simulate('click', mockEvent);
-    expect(wrapper.find('.card').hasClass('people'));
+    expect(wrapper.find('.card').hasClass('.people'));
   });
 
   it('should call the toggleFavorites method with the correct parameters', () => {
