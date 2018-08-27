@@ -2,40 +2,54 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1 solid black;
-  width: 40%; 
-  text-align: center
+  width: 100%; 
+  padding: 1em 0;
+  border-radius: .5em;
+  border: 2px solid rgb(24, 24, 24);
+  text-align: center;
+  background-color: rgb(64, 64, 64, 0.9);
 }
 
 button {
- flex-grow: 1;
- padding: 1em;
- margin: 2em 0 2em 0;
- border-radius: 10px;
- font-size: 1em;
- border: 3px solid black;
- background-color: #898E98;
- outline: none;
- font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
- cursor: point;
+  flex-grow: 1;
+  padding: .5em;
+  margin: 0 .5em;
+  border-radius: .5em;
+  font-size: 1.5em;
+  border: 2px solid rgb(24, 24, 24);
+  outline: none;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  cursor: pointer;
 }
 
-.favorites {
-
-}
-
-.selected {
-  color: #454953;
+.unselected:hover {
+  box-shadow: 5px 7px 10px rgba(0, 255, 0, 0.5);
+  transition-duration: 300ms;
 }
 
 .unselected {
-  color: rgba(0,0,0)
+  color: rgb(24, 24, 24);
+  background-color: rgb(128, 128, 128, 1);
+}
+
+.selected:hover {
+  box-shadow: 5px 7px 10px rgba(180, 0, 0, 0.5);
+  transition-duration: 300ms;
+}
+
+.selected {
+  color: rgb(24, 24, 24);
+  background-color: rgba(180, 0, 0, 1);
 }
 
 .buttons-container {
   display: flex
 }
 
-h1{
-  color: rgba(255,211,0)
+.header {
+  color: rgba(255, 211, 0);
+  text-shadow: 5px 2px 6px rgba(0, 0, 0, 0.8);
+  font-size: 4em;
+  margin: 0 0 .5em 0;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
