@@ -7,8 +7,16 @@ import { mockCleanedFilmData } from '../data/__mocks__/data-cleaner';
 
 describe('App', () => {
   let wrapper;
+  let mockFavorite;
+
   beforeEach(() => {
     wrapper = shallow(<App />);
+    mockFavorite = {
+      Homeworld: 'Tatooine',
+      Population: 200000,
+      Species: 'Human'
+
+    }
   });
 
   it('renders the App with the correct props', () => {
@@ -31,18 +39,40 @@ describe('App', () => {
     expect(wrapper.state('filmData')).toEqual(mockCleanedFilmData);
   });
 
+  it('adds a favorite to the state.favoritesData', () => {
+    wrapper.instance().toggleFavorites(mockFavorite)
+    const actualState = wrapper.instance().state
+
+    expect(actualState.favoritesData.length).toEqual(1)
+
+  })
+
+  it('removes a favorite to the state.favorites', () => {
+    wrapper.instance().toggleFavorites(mockFavorite)
+    const previousState = wrapper.instance().state
+
+    expect(previousState.favoritesData.length).toEqual(1)
+
+    wrapper.instance().toggleFavorites(mockFavorite)
+    const actualState = wrapper.instance().state
+
+    expect(actualState.favoritesData.length).toEqual(0)
+
+  })
+
   describe('displaySelection tests', () => {
     it('should return a CardContainer with peopleData', () => {
-      // const mockPeopleData = [{key1 : 'value'}, {key2 : 'value'}];
-      // const mockToggleFavorites = jest.fn();
-      // const mockCardsToDisplay = 'people';
-      // const result = wrapper.instance().displaySelection(mockCardsToDisplay);
-      // const expected = shallow(
-      //   <CardContainer 
-      //     cardsData={mockPeopleData} 
-      //     toggleFavorites={mockToggleFavorites}
-      //   />);
-      // expect(wrapper.find(CardContainer).prop('cardsData')).toEqual(wrapper.instance().displaySelection);
+     const mockState = { filmData: {},
+        peopleData: [],
+        vehicleData: [],
+        planetData: [],
+        favoritesData: [],
+        cardsToDisplay: '' }
+
+      wrapper.instance().displaySelection('people')
+      const actualState = wrapper.instance().state
+
+      expect(actualState).toEqual(mockState)
     });
   });
 });

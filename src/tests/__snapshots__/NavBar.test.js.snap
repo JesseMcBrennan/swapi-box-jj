@@ -21,34 +21,43 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <button
-          className="unselected"
-          name="people"
-          onClick={[Function]}
+        <h1
+          className="header"
 >
-          People
-</button>,
-        <button
-          className="unselected"
-          name="planets"
-          onClick={[Function]}
+          SWAPI-Box
+</h1>,
+        <div
+          className="buttons-container"
 >
-          Planets
-</button>,
-        <button
-          className="unselected"
-          name="vehicles"
-          onClick={[Function]}
->
-          Vehicles
-</button>,
-        <button
-          className="unselected"
-          name="favorites"
-          onClick={[Function]}
->
-          Favorites 3
-</button>,
+          <button
+                    className="unselected"
+                    name="people"
+                    onClick={[Function]}
+          >
+                    People
+          </button>
+          <button
+                    className="unselected"
+                    name="planets"
+                    onClick={[Function]}
+          >
+                    Planets
+          </button>
+          <button
+                    className="unselected"
+                    name="vehicles"
+                    onClick={[Function]}
+          >
+                    Vehicles
+          </button>
+          <button
+                    className="unselected"
+                    name="favorites"
+                    onClick={[Function]}
+          >
+                    Favorites 3
+          </button>
+</div>,
       ],
       "className": "navBar",
     },
@@ -59,56 +68,110 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "People",
-          "className": "unselected",
-          "name": "people",
-          "onClick": [Function],
+          "children": "SWAPI-Box",
+          "className": "header",
         },
         "ref": null,
-        "rendered": "People",
-        "type": "button",
+        "rendered": "SWAPI-Box",
+        "type": "h1",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Planets",
-          "className": "unselected",
-          "name": "planets",
-          "onClick": [Function],
+          "children": Array [
+            <button
+              className="unselected"
+              name="people"
+              onClick={[Function]}
+>
+              People
+</button>,
+            <button
+              className="unselected"
+              name="planets"
+              onClick={[Function]}
+>
+              Planets
+</button>,
+            <button
+              className="unselected"
+              name="vehicles"
+              onClick={[Function]}
+>
+              Vehicles
+</button>,
+            <button
+              className="unselected"
+              name="favorites"
+              onClick={[Function]}
+>
+              Favorites 3
+</button>,
+          ],
+          "className": "buttons-container",
         },
         "ref": null,
-        "rendered": "Planets",
-        "type": "button",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Vehicles",
-          "className": "unselected",
-          "name": "vehicles",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Vehicles",
-        "type": "button",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Favorites 3",
-          "className": "unselected",
-          "name": "favorites",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Favorites 3",
-        "type": "button",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "People",
+              "className": "unselected",
+              "name": "people",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "People",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Planets",
+              "className": "unselected",
+              "name": "planets",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Planets",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Vehicles",
+              "className": "unselected",
+              "name": "vehicles",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Vehicles",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Favorites 3",
+              "className": "unselected",
+              "name": "favorites",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Favorites 3",
+            "type": "button",
+          },
+        ],
+        "type": "div",
       },
     ],
     "type": "div",
@@ -120,34 +183,43 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <button
-            className="unselected"
-            name="people"
-            onClick={[Function]}
+          <h1
+            className="header"
 >
-            People
-</button>,
-          <button
-            className="unselected"
-            name="planets"
-            onClick={[Function]}
+            SWAPI-Box
+</h1>,
+          <div
+            className="buttons-container"
 >
-            Planets
-</button>,
-          <button
-            className="unselected"
-            name="vehicles"
-            onClick={[Function]}
->
-            Vehicles
-</button>,
-          <button
-            className="unselected"
-            name="favorites"
-            onClick={[Function]}
->
-            Favorites 3
-</button>,
+            <button
+                        className="unselected"
+                        name="people"
+                        onClick={[Function]}
+            >
+                        People
+            </button>
+            <button
+                        className="unselected"
+                        name="planets"
+                        onClick={[Function]}
+            >
+                        Planets
+            </button>
+            <button
+                        className="unselected"
+                        name="vehicles"
+                        onClick={[Function]}
+            >
+                        Vehicles
+            </button>
+            <button
+                        className="unselected"
+                        name="favorites"
+                        onClick={[Function]}
+            >
+                        Favorites 3
+            </button>
+</div>,
         ],
         "className": "navBar",
       },
@@ -158,56 +230,110 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "People",
-            "className": "unselected",
-            "name": "people",
-            "onClick": [Function],
+            "children": "SWAPI-Box",
+            "className": "header",
           },
           "ref": null,
-          "rendered": "People",
-          "type": "button",
+          "rendered": "SWAPI-Box",
+          "type": "h1",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Planets",
-            "className": "unselected",
-            "name": "planets",
-            "onClick": [Function],
+            "children": Array [
+              <button
+                className="unselected"
+                name="people"
+                onClick={[Function]}
+>
+                People
+</button>,
+              <button
+                className="unselected"
+                name="planets"
+                onClick={[Function]}
+>
+                Planets
+</button>,
+              <button
+                className="unselected"
+                name="vehicles"
+                onClick={[Function]}
+>
+                Vehicles
+</button>,
+              <button
+                className="unselected"
+                name="favorites"
+                onClick={[Function]}
+>
+                Favorites 3
+</button>,
+            ],
+            "className": "buttons-container",
           },
           "ref": null,
-          "rendered": "Planets",
-          "type": "button",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Vehicles",
-            "className": "unselected",
-            "name": "vehicles",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Vehicles",
-          "type": "button",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Favorites 3",
-            "className": "unselected",
-            "name": "favorites",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Favorites 3",
-          "type": "button",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "People",
+                "className": "unselected",
+                "name": "people",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "People",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Planets",
+                "className": "unselected",
+                "name": "planets",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Planets",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Vehicles",
+                "className": "unselected",
+                "name": "vehicles",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Vehicles",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Favorites 3",
+                "className": "unselected",
+                "name": "favorites",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Favorites 3",
+              "type": "button",
+            },
+          ],
+          "type": "div",
         },
       ],
       "type": "div",
