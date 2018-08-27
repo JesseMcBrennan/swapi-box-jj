@@ -55,7 +55,7 @@ ShallowWrapper {
                     name="favorites"
                     onClick={[Function]}
           >
-                    Favorites 3
+                    Favorites: 3
           </button>
 </div>,
       ],
@@ -107,7 +107,7 @@ ShallowWrapper {
               name="favorites"
               onClick={[Function]}
 >
-              Favorites 3
+              Favorites: 3
 </button>,
           ],
           "className": "buttons-container",
@@ -161,13 +161,13 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Favorites 3",
+              "children": "Favorites: 3",
               "className": "unselected",
               "name": "favorites",
               "onClick": [Function],
             },
             "ref": null,
-            "rendered": "Favorites 3",
+            "rendered": "Favorites: 3",
             "type": "button",
           },
         ],
@@ -217,7 +217,7 @@ ShallowWrapper {
                         name="favorites"
                         onClick={[Function]}
             >
-                        Favorites 3
+                        Favorites: 3
             </button>
 </div>,
         ],
@@ -269,7 +269,7 @@ ShallowWrapper {
                 name="favorites"
                 onClick={[Function]}
 >
-                Favorites 3
+                Favorites: 3
 </button>,
             ],
             "className": "buttons-container",
@@ -323,13 +323,13 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Favorites 3",
+                "children": "Favorites: 3",
                 "className": "unselected",
                 "name": "favorites",
                 "onClick": [Function],
               },
               "ref": null,
-              "rendered": "Favorites 3",
+              "rendered": "Favorites: 3",
               "type": "button",
             },
           ],

@@ -24,7 +24,8 @@ ShallowWrapper {
 />,
         <div>
           <img
-                    src="loading.gif"
+                    className="loading-gif"
+                    src="loading-droid.gif"
           />
 </div>,
       ],
@@ -51,7 +52,8 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <img
-            src="loading.gif"
+            className="loading-gif"
+            src="loading-droid.gif"
 />,
         },
         "ref": null,
@@ -60,7 +62,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "src": "loading.gif",
+            "className": "loading-gif",
+            "src": "loading-droid.gif",
           },
           "ref": null,
           "rendered": null,
@@ -85,7 +88,8 @@ ShallowWrapper {
 />,
           <div>
             <img
-                        src="loading.gif"
+                        className="loading-gif"
+                        src="loading-droid.gif"
             />
 </div>,
         ],
@@ -112,7 +116,8 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <img
-              src="loading.gif"
+              className="loading-gif"
+              src="loading-droid.gif"
 />,
           },
           "ref": null,
@@ -121,7 +126,8 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "src": "loading.gif",
+              "className": "loading-gif",
+              "src": "loading-droid.gif",
             },
             "ref": null,
             "rendered": null,

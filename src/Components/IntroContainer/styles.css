@@ -1,26 +1,31 @@
 .target {
-  border: 2px solid red;
   position: absolute;
-  top: -980px;
+  z-index: -1;
+  top: -1000px;
   bottom: 0;
   left: 0;
   right: 0;
   overflow: hidden;
-  font-size: 40px;
+  font-size: 3em;
   text-align: center;
   font-family: sans-serif;
   transform-origin: 50% 100%;
-  transform: perspective(300px) rotateX(20deg);
+  transform: perspective(300px) rotateX(19deg);
+  background-color: rgb(24, 24, 24, .5);
 }
 
 .introContainer {
-  padding-top: 1600px;
-  animation: autoscroll 900s linear;
-  color: #F1634E
+  padding-top: 1800px;
+  animation: autoscroll 100s linear;
+  color:rgba(255, 211, 0, .9)
+}
+
+.introContainer h1 {
+  margin: 0;
 }
 
 @keyframes autoscroll {
   to {
-    margin-top: -5000px;
+    margin-top: -3000px;
   }
 }
